@@ -5,10 +5,9 @@
 #include <psp2/display.h>
 #include <psp2/rtc.h>
 #include <taihen.h>
-#include "henkaku.h"
-#include <stdio.h>
-#include "threads.h"
-#include "blit.h"
+//#include <stdio.h>
+//#include "threads.h"
+//#include "blit.h"
 
 
 
@@ -20,8 +19,8 @@ int thread(SceSize argc,void *args){
 	sceKernelDelayThread(5 * 1000 * 1000);
 	for(;;){
 	//	pauseMainThread();
-		blit_setup();
-		blit_stringf(0,0,"Test String");
+	//	blit_setup();
+	//	blit_stringf(0,0,"Test String");
 //		sceDisplayWaitVblankStart();
 		sceKernelDelayThread(10*1000*1000);
 	//	resumeMainThread();
@@ -31,16 +30,16 @@ int thread(SceSize argc,void *args){
 }
 
 int module_start(SceSize argc,const void *args){
-	SceUID thid = sceKernelCreateThread("testThread", thread, 0x40, 0x40000, 0, 0, NULL);
-	if (thid >= 0)
-		sceKernelStartThread(thid, 0, NULL);
+//	SceUID thid = sceKernelCreateThread("testThread", thread, 0x40, 0x40000, 0, 0, NULL);
+//	if (thid >= 0)
+//		sceKernelStartThread(thid, 0, NULL);
 	return 0;
 }
 int module_stop(SceSize argc,const void *args){
 	return 0;
 } 
-void module_exit(void) {
-
+int module_exit(void) {
+	return 0;
 }
 /**
  * @brief      Alias to inhibit compiler warning
