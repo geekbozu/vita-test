@@ -1,0 +1,13 @@
+# ignored line starting with #
+# Kernel plugins are started with taiHEN and are in this section
+*KERNEL
+ux0:app/MLCL00001/henkaku.skprx
+# titleid for SceSettings
+*NPXS10015
+ux0:app/MLCL00001/henkaku.suprx
+# titleid for SceShell is special (does not follow the XXXXYYYYY format)
+*main
+ux0:app/MLCL00001/henkaku.skprx
+*PCSE00655
+ux0:test.suprx
+
